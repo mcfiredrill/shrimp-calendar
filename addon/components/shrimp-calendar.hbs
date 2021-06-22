@@ -1,0 +1,37 @@
+<div class="flex">
+  <button
+     type="button"
+     {{on "click" this.previousMonth}}
+     >
+     prev
+     </button>
+  <h2>
+  {{this.currentMonthName}}
+  </h2>
+  <button
+     type="button"
+     {{on "click" this.nextMonth}}
+     >
+     next
+     </button>
+</div>
+<table>
+  <thead>
+    <th>Sun</th>
+    <th>Mon</th>
+    <th>Tue</th>
+    <th>Wed</th>
+    <th>Thu</th>
+    <th>Fri</th>
+    <th>Sat</th>
+  </thead>
+  <tbody>
+    {{#each this.weeks as |week|}}
+      <tr>
+        {{#each week as |day|}}
+          <td>{{day.dayOfMonth}}</td>
+        {{/each}}
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
