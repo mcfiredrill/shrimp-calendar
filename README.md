@@ -1,7 +1,11 @@
 shrimp-calendar
 ==============================================================================
 
-[Short description of the addon.]
+STOP do you really want to use a calendar library? :shrimp:
+Maybe you should try writing your own, its not that hard.
+
+OK, if you want to try to use this one, go ahead, it probably won't fit all your
+needs, but it might be a good start.
 
 
 Compatibility
@@ -23,7 +27,12 @@ ember install shrimp-calendar
 Usage
 ------------------------------------------------------------------------------
 
-[Longer description of how to use the addon in apps.]
+```hbs
+<ShrimpCalendar @events={{this.events}} as |events| >
+  <span>{{event.start}}-{{event.end}}</span>
+  <LinkTo @route="event.show" @model={{event}}>{{event.title}}</LinkTo>
+</ShrimpCalendar>
+```
 
 
 Contributing
