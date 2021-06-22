@@ -29,7 +29,12 @@
     {{#each this.weeks as |week|}}
       <tr>
         {{#each week as |day|}}
-          <td>{{day.dayOfMonth}}</td>
+          <td>
+            {{day.dayOfMonth}}
+            {{#each day.events as |event|}}
+              {{yield event}}
+            {{/each}}
+          </td>
         {{/each}}
       </tr>
     {{/each}}
