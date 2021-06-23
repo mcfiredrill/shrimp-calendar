@@ -25,14 +25,16 @@
     <div class="bg-white">Sat</div>
     <div class="bg-white">Sun</div>
   </div>
-  <div class="grid grid-cols-7 grid-rows-5 grid-flow-row gap-px bg-gray-200 border border-gray-200" style="min-height: 24rem;">
-    {{#each this.days as |day|}}
-      <div class="bg-white">
-        {{day.dayOfMonth}}
-        {{#each day.events as |event|}}
-          {{yield event}}
-        {{/each}}
-      </div>
-    {{/each}}
-  </div>
+  {{#each this.weeks as |week|}}
+    <div class="grid grid-cols-7 grid-flow-row gap-px bg-gray-200 border border-gray-200" style="min-height: 10rem;">
+      {{#each week as |day|}}
+        <div class="bg-white">
+          {{day.dayOfMonth}}
+          {{#each day.events as |event|}}
+            {{yield event}}
+          {{/each}}
+        </div>
+      {{/each}}
+    </div>
+  {{/each}}
 </div>
