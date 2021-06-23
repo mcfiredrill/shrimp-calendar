@@ -1,4 +1,4 @@
-<div class="flex">
+<div class="flex space-x-1">
   <button
      type="button"
      {{on "click" this.previousMonth}}
@@ -15,28 +15,24 @@
      next
      </button>
 </div>
-<table>
-  <thead>
-    <th>Sun</th>
-    <th>Mon</th>
-    <th>Tue</th>
-    <th>Wed</th>
-    <th>Thu</th>
-    <th>Fri</th>
-    <th>Sat</th>
-  </thead>
-  <tbody>
-    {{#each this.weeks as |week|}}
-      <tr>
-        {{#each week as |day|}}
-          <td>
-            {{day.dayOfMonth}}
-            {{#each day.events as |event|}}
-              {{yield event}}
-            {{/each}}
-          </td>
+<div>
+  <div class="grid grid-cols-7">
+    <div class="bg-white">Mon</div>
+    <div class="bg-white">Tue</div>
+    <div class="bg-white">Wed</div>
+    <div class="bg-white">Thu</div>
+    <div class="bg-white">Fri</div>
+    <div class="bg-white">Sat</div>
+    <div class="bg-white">Sun</div>
+  </div>
+  <div class="grid grid-cols-7 grid-rows-5 grid-flow-row gap-px bg-gray-200 border border-gray-200" style="min-height: 24rem;">
+    {{#each this.days as |day|}}
+      <div class="bg-white">
+        {{day.dayOfMonth}}
+        {{#each day.events as |event|}}
+          {{yield event}}
         {{/each}}
-      </tr>
+      </div>
     {{/each}}
-  </tbody>
-</table>
+  </div>
+</div>
