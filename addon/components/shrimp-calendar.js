@@ -134,12 +134,12 @@ export default class ShrimpCalendarComponent extends Component {
 
   @action
   previousMonth(){
-    this.currentMonth = this.currentMonth - 1;
+    this.currentMonth = parseInt(this.currentMonth) - 1;
   }
 
   @action
   nextMonth(){
-    this.currentMonth = this.currentMonth + 1;
+    this.currentMonth = parseInt(this.currentMonth) + 1;
   }
 
   constructor(owner, args) {
