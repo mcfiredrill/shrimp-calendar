@@ -1,18 +1,20 @@
 <div class="flex space-x-1">
   <button
+     class="cursor-pointer bg-gray-200 font-bold py-2 px-2 rounded shadow"
      type="button"
      {{on "click" this.previousMonth}}
      >
-     prev
+     &lt;
      </button>
-  <h2>
+  <h2 class="text-xl">
     {{this.currentMonthName}} - {{this.currentYear}}
   </h2>
   <button
+     class="cursor-pointer bg-gray-200 font-bold py-2 px-2 rounded shadow"
      type="button"
      {{on "click" this.nextMonth}}
      >
-     next
+     &gt;
      </button>
 </div>
 <div>
@@ -28,7 +30,8 @@
   {{#each this.weeks as |week|}}
     <div class="grid grid-cols-7 grid-flow-row gap-px bg-gray-200 border border-gray-200" style="min-height: 10rem;">
       {{#each week as |day|}}
-        <div class="bg-white">
+        <div
+          class="{{if day.isCurrentMonth "bg-white"}}">
           {{day.dayOfMonth}}
           {{#each day.events as |event|}}
             {{yield event}}
