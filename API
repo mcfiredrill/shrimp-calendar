@@ -1,0 +1,5 @@
+<ShrimpCalendar @events={{this.events}} as |events| >
+  <span>{{event.start}}-{{event.end}}</span>
+  <LinkTo @route="event.show" @model={{event}}>{{event.title}}</LinkTo>
+</ShrimpCalendar>
+
