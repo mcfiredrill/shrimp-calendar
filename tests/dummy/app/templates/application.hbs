@@ -1,0 +1,10 @@
+{{page-title "Shrimp Calendar"}}
+<marquee>
+  <h2 id="title">Shrimp Calendar</h2>
+</marquee>
+
+<ShrimpCalendar @events={{this.events}} as |event|>
+  <div class="bg-red-500 rounded-md p-1 mb-1 text-xs text-white">
+    {{event.title}}
+  </div>
+</ShrimpCalendar>
