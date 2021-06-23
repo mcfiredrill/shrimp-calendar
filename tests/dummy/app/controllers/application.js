@@ -1,5 +1,4 @@
 import Controller from '@ember/controller';
-import dayjs from 'dayjs';
 
 export default class ApplicationController extends Controller {
   constructor() {

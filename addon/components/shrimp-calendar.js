@@ -37,9 +37,12 @@ export default class ShrimpCalendarComponent extends Component {
     return [...Array(this.getNumberOfDaysInMonth(year, month))].map(
       (day, index) => {
         let _day = dayjs(`${year}-${month}-${index + 1}`);
-        let eventsOnDay = this.args.events.filter((event) => {
-          return dayjs(event.start).isSame(_day, 'day');
-        });
+        let eventsOnDay;
+        if(this.args.events) {
+          eventsOnDay = this.args.events.filter((event) => {
+            return dayjs(event.start).isSame(_day, 'day');
+          });
+        }
         return {
           date: _day.format('YYYY-MM-DD'),
           dayOfMonth: index + 1,

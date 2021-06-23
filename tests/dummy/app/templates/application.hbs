@@ -1,7 +1,10 @@
 {{page-title "Shrimp Calendar"}}
-
-<h2 id="title">Shrimp Calendar</h2>
+<marquee>
+  <h2 id="title">Shrimp Calendar</h2>
+</marquee>
 
 <ShrimpCalendar @events={{this.events}} as |event|>
-  {{event.title}}
+  <div>
+    {{event.title}}
+  </div>
 </ShrimpCalendar>
