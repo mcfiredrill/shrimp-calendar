@@ -1,4 +1,4 @@
-<div class="flex space-x-1">
+<div class="flex space-x-1 justify-center items-center">
   <button
      class="cursor-pointer bg-gray-200 font-bold py-2 px-2 rounded shadow"
      type="button"
@@ -31,6 +31,7 @@
     <div class="grid grid-cols-7 grid-flow-row gap-px bg-gray-200 border border-gray-200" style="min-height: 10rem;">
       {{#each week as |day|}}
         <div
+          {{on "click" (fn this.handleDayClick day)}}
           class="{{if day.isCurrentMonth "bg-white"}}">
           {{day.dayOfMonth}}
           {{#each day.events as |event|}}

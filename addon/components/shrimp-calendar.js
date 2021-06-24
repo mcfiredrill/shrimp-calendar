@@ -38,7 +38,7 @@ export default class ShrimpCalendarComponent extends Component {
       (day, index) => {
         let _day = dayjs(`${year}-${month}-${index + 1}`);
         let eventsOnDay;
-        if(this.args.events) {
+        if (this.args.events) {
           eventsOnDay = this.args.events.filter((event) => {
             return dayjs(event.start).isSame(_day, 'day');
           });
@@ -133,13 +133,21 @@ export default class ShrimpCalendarComponent extends Component {
   }
 
   @action
-  previousMonth(){
+  previousMonth() {
     this.currentMonth = parseInt(this.currentMonth) - 1;
   }
 
   @action
-  nextMonth(){
+  nextMonth() {
     this.currentMonth = parseInt(this.currentMonth) + 1;
+  }
+
+  @action
+  handleDayClick(day) {
+    console.log(`${day} was clicked in component`);
+    if (this.args.onDayclick) {
+      this.args.onDayclick(day);
+    }
   }
 
   constructor(owner, args) {

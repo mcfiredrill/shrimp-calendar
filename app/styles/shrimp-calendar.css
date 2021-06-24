@@ -1,9 +1,4 @@
 @tailwind base;
 @tailwind components;
 
-table,
-td {
-  border: 1px solid #333;
-}
-
 @tailwind utilities;
