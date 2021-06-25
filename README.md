@@ -7,6 +7,8 @@ Maybe you should try writing your own, its not that hard.
 OK, if you want to try to use this one, go ahead, it probably won't fit all your
 needs, but it might be a good start.
 
+* [DEMO](https://festive-mayer-9f9c8b.netlify.app/)
+
 
 Compatibility
 ------------------------------------------------------------------------------
