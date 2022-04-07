@@ -28,11 +28,16 @@
     <div class="bg-white">Sun</div>
   </div>
   {{#each this.weeks as |week|}}
-    <div class="grid grid-cols-7 grid-flow-row gap-px bg-gray-200 border border-gray-200" style="min-height: 10rem;">
+    <div
+      class="grid grid-cols-7 grid-flow-row gap-px bg-gray-200 border border-gray-200"
+      style="min-height: 10rem;">
       {{#each week as |day|}}
         <div
+          id="shrimp-calendar-day"
           {{on "click" (fn this.handleDayClick day)}}
-          class="{{if day.isCurrentMonth "bg-white"}}">
+          class="{{if day.isCurrentMonth "bg-white"}}"
+          style="min-width: 5rem;"
+          >
           {{day.dayOfMonth}}
           {{#each day.events as |event|}}
             {{yield event}}
