@@ -13,7 +13,7 @@ dayjs.extend(weekday);
 // mostly copied this from https://codesandbox.io/s/ur29q?file=/src/index.js:3009-3034
 // and adapted it for ember
 
-const TODAY = dayjs().format('YYYY-MM-DD');
+//const TODAY = dayjs().format('YYYY-MM-DD');
 
 const INITIAL_YEAR = dayjs().format('YYYY');
 const INITIAL_MONTH = dayjs().format('M');
