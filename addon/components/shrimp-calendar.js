@@ -135,11 +135,25 @@ export default class ShrimpCalendarComponent extends Component {
   @action
   previousMonth() {
     this.currentMonth = parseInt(this.currentMonth) - 1;
+    if (typeof this.args.onCalendarNavigate === 'function') {
+      this.args.onCalendarNavigate({
+        start: dayjs(
+          `${this.currentYear}-${this.currentMonth}-${this.currentDay}`
+        ),
+      });
+    }
   }
 
   @action
   nextMonth() {
     this.currentMonth = parseInt(this.currentMonth) + 1;
+    if (typeof this.args.onCalendarNavigate === 'function') {
+      this.args.onCalendarNavigate({
+        start: dayjs(
+          `${this.currentYear}-${this.currentMonth}-${this.currentDay}`
+        ),
+      });
+    }
   }
 
   @action
