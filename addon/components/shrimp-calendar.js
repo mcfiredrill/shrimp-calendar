@@ -17,11 +17,12 @@ dayjs.extend(weekday);
 
 const INITIAL_YEAR = dayjs().format('YYYY');
 const INITIAL_MONTH = dayjs().format('M');
+const INITIAL_DAY = dayjs().format('DD');
 
 export default class ShrimpCalendarComponent extends Component {
   @tracked currentYear;
   @tracked currentMonth;
-  @tracked currentDay = 1;
+  @tracked currentDay;
 
   get days() {
     return [
@@ -47,6 +48,7 @@ export default class ShrimpCalendarComponent extends Component {
           date: _day.format('YYYY-MM-DD'),
           dayOfMonth: index + 1,
           isCurrentMonth: true,
+          isCurrentDay: this.currentDay === _day.format("DD"),
           events: eventsOnDay,
         };
       }
@@ -163,5 +165,6 @@ export default class ShrimpCalendarComponent extends Component {
     console.log('hi shrimp');
     this.currentYear = INITIAL_YEAR;
     this.currentMonth = INITIAL_MONTH;
+    this.currentDay = INITIAL_DAY;
   }
 }
