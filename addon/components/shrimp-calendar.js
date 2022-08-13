@@ -21,7 +21,7 @@ const INITIAL_MONTH = dayjs().format('M');
 export default class ShrimpCalendarComponent extends Component {
   @tracked currentYear;
   @tracked currentMonth;
-  @tracked currentDay;
+  @tracked currentDay = 1;
 
   get days() {
     return [
