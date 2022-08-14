@@ -163,8 +163,10 @@ export default class ShrimpCalendarComponent extends Component {
   constructor(owner, args) {
     super(owner, args);
     console.log('hi shrimp');
-    this.currentYear = INITIAL_YEAR;
-    this.currentMonth = INITIAL_MONTH;
-    this.currentDay = INITIAL_DAY;
+    const startDate = dayjs(args.startDate);
+    console.log(startDate);
+    this.currentYear = startDate.format('YYYY') || INITIAL_YEAR;
+    this.currentMonth = startDate.format('M') || INITIAL_MONTH;
+    this.currentDay = startDate.format('DD') || INITIAL_DAY;
   }
 }
